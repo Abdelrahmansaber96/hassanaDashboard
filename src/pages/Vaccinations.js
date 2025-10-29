@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Plus, Search, Edit2, Trash2, Syringe, Filter, X } from 'lucide-react';
 
 const Vaccinations = () => {
+  // Add API base URL configuration
+  const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3000';
+  
   const [vaccinations, setVaccinations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
@@ -54,7 +57,7 @@ const Vaccinations = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:3000/api/vaccinations', {
+      const response = await fetch(`${API_BASE_URL}/api/vaccinations`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -209,8 +212,8 @@ const Vaccinations = () => {
     try {
       const token = localStorage.getItem('token');
       const url = editMode
-        ? `http://localhost:3000/api/vaccinations/${currentVaccination._id}`
-        : 'http://localhost:3000/api/vaccinations';
+        ? `${API_BASE_URL}/api/vaccinations/${currentVaccination._id}`
+        : `${API_BASE_URL}/api/vaccinations`;
 
       const method = editMode ? 'PUT' : 'POST';
 
@@ -255,7 +258,7 @@ const Vaccinations = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3000/api/vaccinations/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/vaccinations/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`
