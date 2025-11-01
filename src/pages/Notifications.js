@@ -441,7 +441,7 @@ const Notifications = () => {
                         <Clock className="h-4 w-4" />
                         <span>
                           {notification.createdAt 
-                            ? new Date(notification.createdAt).toLocaleDateString('ar-SA')
+                            ? new Date(notification.createdAt).toLocaleDateString('ar-EG')
                             : '12 أكتوبر 2025'
                           }
                         </span>

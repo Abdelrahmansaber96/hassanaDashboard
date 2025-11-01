@@ -413,7 +413,7 @@ const Consultations = () => {
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="flex items-center text-sm text-gray-900">
                       <Calendar className="h-4 w-4 ml-2" />
-                      {new Date(consultation.scheduledDate).toLocaleDateString('ar-SA')}
+                      {new Date(consultation.scheduledDate).toLocaleDateString('ar-EG')}
                     </div>
                     <div className="flex items-center text-sm text-gray-500">
                       <Clock className="h-4 w-4 ml-2" />

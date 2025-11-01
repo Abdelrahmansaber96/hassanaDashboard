@@ -565,7 +565,7 @@ const Bookings = () => {
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="flex items-center text-sm text-gray-900">
                       <Calendar className="h-4 w-4 ml-2" />
-                      {new Date(booking.appointmentDate).toLocaleDateString('ar-SA')}
+                      {new Date(booking.appointmentDate).toLocaleDateString('ar-EG')}
                     </div>
                     <div className="flex items-center text-sm text-gray-500">
                       <Clock className="h-4 w-4 ml-2" />
